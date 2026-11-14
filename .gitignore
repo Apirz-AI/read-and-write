@@ -1,0 +1,15 @@
+# Nie hochladen: Zugangsdaten und private Dateien
+.env
+*.env
+*.key
+*.pem
+*geheim*
+*passwort*
+# Protokolle und Zwischenstände
+*.log
+*.tmp
+__pycache__/
+*.pyc
+# Windows
+Thumbs.db
+desktop.ini

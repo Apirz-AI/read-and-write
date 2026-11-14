@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read &amp; Write – Anleitung</title>
+<style>
+  :root {
+    --grund: #f6f5f3; --flaeche: #ffffff; --text: #1f1f1f; --leise: #5f5f5f;
+    --linie: #e2e0dc; --akzent: #b4501e; --taste: #2b2b2b; --tastetext: #f2f2f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --grund: #1b1b1b; --flaeche: #242424; --text: #ececec; --leise: #a8a8a8;
+      --linie: #343434; --akzent: #e08a5a; --taste: #3a3a3a; --tastetext: #f2f2f2;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--grund); color: var(--text);
+    font: 16px/1.6 "Segoe UI", system-ui, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 64px; }
+  header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+  .leiste {
+    display: inline-flex; align-items: stretch; height: 36px; border-radius: 8px;
+    background: var(--taste); color: var(--tastetext); overflow: hidden; flex: none;
+  }
+  .leiste span { width: 36px; display: grid; place-items: center; font-size: 15px; border-left: 1px solid #4a4a4a; }
+  .leiste span:first-child { border-left: 0; letter-spacing: -1px; color: #9a9a9a; }
+  h1 { font-size: 28px; margin: 0; font-weight: 600; }
+  header p { margin: 2px 0 0; color: var(--leise); }
+  section {
+    background: var(--flaeche); border: 1px solid var(--linie); border-radius: 10px;
+    padding: 20px 24px; margin: 16px 0;
+  }
+  h2 { font-size: 19px; margin: 0 0 10px; font-weight: 600; }
+  h2 small { color: var(--akzent); font-weight: 600; font-size: 13px; margin-left: 6px; text-transform: uppercase; letter-spacing: .04em; }
+  ol, ul { margin: 6px 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 6px 0; }
+  dt { font-weight: 600; }
+  dd { margin: 0; }
+  .hinweis { color: var(--leise); font-size: 15px; }
+  .farbe { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: 1px; }
+  kbd { font: 13px Consolas, monospace; border: 1px solid var(--linie); border-radius: 4px; padding: 1px 5px; }
+  footer { color: var(--leise); font-size: 14px; margin-top: 28px; text-align: center; }
+  @media (max-width: 560px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: 8px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="leiste" aria-hidden="true"><span>⋮</span><span>🔊</span><span>🎤</span><span>⋯</span></div>
+    <div>
+      <h1>Read &amp; Write</h1>
+      <p>Der schwebende Knopf zum Vorlesen und Diktieren</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Der Knopf <small>Überblick</small></h2>
+    <dl>
+      <dt>Griff ⋮</dt><dd>Gedrückt halten und ziehen, um den Knopf zu verschieben. Die Stelle wird gemerkt, auch auf einem zweiten Bildschirm.</dd>
+      <dt>Lautsprecher</dt><dd>Liest den Text vor, der gerade kopiert ist (<kbd>Strg</kbd> + <kbd>C</kbd>).</dd>
+      <dt>Mikrofon</dt><dd>Diktieren: erst in ein Textfeld klicken, dann aufs Mikrofon und sprechen. Nochmal klicken beendet.</dd>
+      <dt>Drei Punkte</dt><dd>Öffnen das Menü direkt darunter. Nochmal auf die Punkte oder irgendwo anders hinklicken schließt es.</dd>
+    </dl>
+    <p class="hinweis">Während des Vorlesens zeigt der Knopf: 10 Sekunden zurück, Pause/Weiter, 10 Sekunden vor und Stopp.</p>
+  </section>
+
+  <section>
+    <h2>Vorlesen</h2>
+    <ul>
+      <li>Text markieren, kopieren, dann auf den Lautsprecher klicken.</li>
+      <li><b>Auto-Vorlesen</b> im Menü liest jeden neu kopierten Text sofort vor. Neu Kopiertes ersetzt, was gerade gelesen wird.</li>
+      <li><b>Text zeigen</b> öffnet ein Textfeld mit dem kopierten Text. Dort kann man ihn ändern und mit „Vorlesen“ hören.</li>
+      <li><b>Geschwindigkeit</b> von 70 bis 200 Prozent, im Menü oder im Textfeld mit „Langsamer“ und „Schneller“. Sie wird gemerkt.</li>
+      <li><b>Stimmen</b>: Katja, Seraphina, Conrad oder Florian. Ein Wechsel liest an der aktuellen Stelle weiter.</li>
+    </ul>
+    <p class="hinweis">Die natürlichen Stimmen brauchen Internet. Ohne Internet liest Read &amp; Write automatisch mit der eingebauten Windows-Stimme weiter.</p>
+  </section>
+
+  <section>
+    <h2>Diktieren</h2>
+    <p>Im Menü unter <b>Diktieren</b> gibt es zwei Arten:</p>
+    <dl>
+      <dt>Online</dt><dd>Die Spracheingabe von Windows (wie <kbd>Windows</kbd> + <kbd>H</kbd>). Sehr schnell und genau, braucht Internet. Ihr kleines Fenster erscheint und schließt sich beim zweiten Klick auf das Mikrofon wieder.</dd>
+      <dt>Offline</dt><dd>Alles bleibt auf dem Rechner. Die Wörter erscheinen live, jeder Satz wird danach von einem genaueren Sprachmodell ausgebessert.</dd>
+    </dl>
+    <p>Ist kein Internet da, wird automatisch offline diktiert.</p>
+    <p><span class="farbe" style="background:#ff5252"></span>Rot: hört zu. &nbsp; <span class="farbe" style="background:#ffb74d"></span>Orange: Sprachmodell lädt noch (nur beim ersten Mal länger).</p>
+    <p>Satzzeichen kann man ansagen: „Punkt“, „Komma“, „Fragezeichen“, „Ausrufezeichen“, „Doppelpunkt“, „neue Zeile“, „neuer Absatz“.</p>
+    <p>Offline setzt das Programm den Punkt nach einer Sprechpause von gut einer Sekunde. Bei einer kurzen Denkpause geht der Satz einfach weiter.</p>
+    <p class="hinweis">Es wird das Mikrofon benutzt, das in Windows unter Einstellungen → System → Sound → Eingabe ausgewählt ist. Beim Diktieren wird das Vorlesen gestoppt, damit das Mikrofon die Stimme nicht mitschreibt.</p>
+  </section>
+
+  <section>
+    <h2>Wenn etwas nicht klappt</h2>
+    <ul>
+      <li><b>Online-Diktat startet nicht:</b> In Windows unter Einstellungen → Datenschutz und Sicherheit → Spracherkennung die Online-Spracherkennung einschalten, oder im Menü auf Offline stellen.</li>
+      <li><b>Kein Mikrofon gefunden:</b> Mikrofon anschließen und unter Einstellungen → Datenschutz und Sicherheit → Mikrofon den Zugriff für Desktop-Apps erlauben.</li>
+      <li><b>Knopf verschwunden:</b> Im Startmenü „Read &amp; Write“ öffnen.</li>
+      <li><b>Unklare Stimme ohne Internet:</b> Die Windows-Stimme klingt einfacher. Mit Internet wird wieder die gewählte Stimme genommen.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Installieren und Entfernen</h2>
+    <ol>
+      <li>„Read &amp; Write Setup.exe“ doppelklicken. Fragt Windows nach: „Weitere Informationen“ und „Trotzdem ausführen“.</li>
+      <li>„Weiter“, dann „Installieren“. Beim ersten Mal dauert es einige Minuten, weil Stimmen und Sprachmodell geladen werden. Adminrechte sind nicht nötig.</li>
+      <li>Für ein Update einfach eine neuere Setup-Datei ausführen. Die Einstellungen bleiben erhalten.</li>
+    </ol>
+    <p class="hinweis">Entfernen: Windows-Einstellungen → Apps → Installierte Apps → „Read &amp; Write“ → Deinstallieren.</p>
+  </section>
+
+  <footer>Read &amp; Write · A.Pirzadeh</footer>
+</main>
+</body>
+</html>
